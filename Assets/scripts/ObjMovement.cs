@@ -12,7 +12,7 @@ public class ObjMovement : MonoBehaviour
 
     void Start()
     {
-        speedModifier = 0.001f;
+        speedModifier = 0.002f;
 
     }
 
