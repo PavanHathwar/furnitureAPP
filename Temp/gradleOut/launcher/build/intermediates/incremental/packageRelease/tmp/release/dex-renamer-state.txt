@@ -1,0 +1,4 @@
+#Thu Apr 29 11:27:42 IST 2021
+base.0=/Users/pavanhathwar/Desktop/Virtual_Furniture/Temp/gradleOut/launcher/build/intermediates/dex/release/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex
