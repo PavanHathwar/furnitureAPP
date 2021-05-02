@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6358726164432083696}
   - component: {fileID: 5477547802453111171}
   - component: {fileID: 6022702101021916256}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: ChairHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ MeshRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 478681186887060417}
   m_Enabled: 1
-  m_CastShadows: 1
+  m_CastShadows: 2
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_MotionVectors: 1
@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a942d06eaedd14397b559f6d4092620f, type: 2}
+  - {fileID: 2100000, guid: 5899755db1b654f478d1eb056685ce6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3578f0cc891d14ecaae406b2f56085d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  placementIndicator: {fileID: 1430506808427463189, guid: b0b06b8a3193d4db19fd3d207e25c85c,
+    type: 3}
+  select: {fileID: 2100000, guid: ee1c9e44cda6244f7a6d0d4cef42f457, type: 2}
+  deselect: {fileID: 2100000, guid: 5899755db1b654f478d1eb056685ce6b, type: 2}
 --- !u!1 &5781827386284068594
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +123,7 @@ GameObject:
   - component: {fileID: 3835550433908629377}
   - component: {fileID: 8238935760307037450}
   - component: {fileID: 8782026084967242395}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Chair_LP
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +170,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a942d06eaedd14397b559f6d4092620f, type: 2}
+  - {fileID: 2100000, guid: 5899755db1b654f478d1eb056685ce6b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

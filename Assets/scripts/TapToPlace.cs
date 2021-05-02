@@ -47,6 +47,7 @@ public class TapToPlace : MonoBehaviour
         {
             placementIndicator.SetActive(false);
         }
+        
     }
 
     private void UpdatePlacementPose()
@@ -60,10 +61,12 @@ public class TapToPlace : MonoBehaviour
         {
             placementPose = hits[0].pose;
 
-            var cameraForward = Camera.current.transform.forward;
-            var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
-            placementPose.rotation = Quaternion.LookRotation(cameraBearing);
+            
         }
+        
+        var cameraForward = Camera.current.transform.forward;
+        var cameraBearing = new Vector3(cameraForward.x, 0, cameraForward.z).normalized;
+        placementPose.rotation = Quaternion.LookRotation(cameraBearing);
     }
 }
 
