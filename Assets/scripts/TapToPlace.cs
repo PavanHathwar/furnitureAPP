@@ -13,6 +13,7 @@ public class TapToPlace : MonoBehaviour
     private Pose placementPose;
     private bool placementPoseIsValid = false;
     private int count = 0;
+    
 
     void Start()
     {

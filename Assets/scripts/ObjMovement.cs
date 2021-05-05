@@ -1,27 +1,53 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjMovement : MonoBehaviour
 {
-    public GameObject placementIndicator;
+    
     private Touch touch;
     [SerializeField] private Material select;
-    [SerializeField] private Material deselect;
+    [SerializeField] private GameObject controlPanel;
+    [SerializeField] private LayerMask interactableLayers;
 
     private float speedModifier;
     private float initialDistance;
     private Vector3 initialScale;
+    private GameObject selectedObject;
+    private Material unselectedMaterial;
+    private Button leftButton;
+    private Button rightButton;
     
 // Start is called before the first frame update
 
     void Start()
     {
         speedModifier = 0.002f;
+        leftButton=controlPanel.transform.Find("left").GetComponent<Button>(); 
+        rightButton=controlPanel.transform.Find("right").GetComponent<Button>();
+        leftButton.onClick.AddListener(LeftRotate);
+        rightButton.onClick.AddListener(RightRotate);
 
     }
 
-// Update is called once per frame
+    private void RightRotate()
+    {
+        if (selectedObject != null)
+        {
+            selectedObject.transform.Rotate(new Vector3(0,-10,0));
+        }
+    }
+
+    private void LeftRotate()
+    {
+        if (selectedObject != null)
+        {
+            selectedObject.transform.Rotate(new Vector3(0,10,0));
+        }
+    }
+
+    // Update is called once per frame
 
     void Update()
     {
@@ -32,21 +58,11 @@ public class ObjMovement : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(touch.position);
             RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 10, interactableLayers))
             {
-                GameObject selectedObject = hit.transform.gameObject;
-                Material material = selectedObject.GetComponent<MeshRenderer>().sharedMaterial;
-                
-                if (touch.phase == TouchPhase.Moved && material == select)
-                {
-                    selectedObject.transform.position = new Vector3(
+                GameObject newSelectedObject = hit.transform.gameObject;
 
-                        selectedObject.transform.position.x + touch.deltaPosition.x * speedModifier,
-                        selectedObject.transform.position.y,
-
-                        selectedObject.transform.position.z + touch.deltaPosition.y * speedModifier);
-                }
-                
+                move(touch,newSelectedObject);
             }
         }
 
@@ -55,43 +71,62 @@ public class ObjMovement : MonoBehaviour
             touch = Input.GetTouch(0);
             Ray ray = Camera.main.ScreenPointToRay(touch.position);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Physics.Raycast(ray, out hit, 10, interactableLayers))
             {
-                GameObject selectedObject = hit.transform.gameObject;
-                Material material = selectedObject.GetComponent<MeshRenderer>().sharedMaterial;
-                if (touch.phase == TouchPhase.Began)
-                {
-                    if (material == deselect)
-                    { 
-                        selectedObject.GetComponent<MeshRenderer>().material = select;
-                        selectedObject.transform.position = new Vector3(
+                GameObject newSelectedObject = hit.transform.gameObject;
 
-                            selectedObject.transform.position.x,
-                            (selectedObject.transform.position.y)+1,
-
-                            selectedObject.transform.position.z);
-                        
-                        
-                    }
-
-                    if (material == select)
-                    {
-                        selectedObject.GetComponent<MeshRenderer>().material = deselect;
-                        selectedObject.transform.position = new Vector3(
-
-                            selectedObject.transform.position.x,
-                            (selectedObject.transform.position.y)-1,
-
-                            selectedObject.transform.position.z);
-
-                    }
-                }
+                selecting(touch, newSelectedObject);
             }
-
-            
         }
+    }
 
+    void move(Touch touch,GameObject newselectedObject)
+    { //Material material = newselectedObject.GetComponent<MeshRenderer>().material;
+        if (touch.phase == TouchPhase.Moved && selectedObject != null)
+        {
+            newselectedObject.transform.position = new Vector3(
 
+                newselectedObject.transform.position.x + touch.deltaPosition.x * speedModifier,
+                newselectedObject.transform.position.y,
+
+                newselectedObject.transform.position.z + touch.deltaPosition.y * speedModifier);
+        }
+    }
+
+    void selecting(Touch touch, GameObject newSelectedObject)
+    {
+        if (touch.phase == TouchPhase.Began)
+        {
+            if (selectedObject == null)
+            {
+                selectedObject = newSelectedObject;
+                unselectedMaterial = selectedObject.GetComponent<MeshRenderer>().material;
+                selectedObject.GetComponent<MeshRenderer>().material = select;
+                selectedObject.transform.position = new Vector3(
+
+                    selectedObject.transform.position.x,
+                    (selectedObject.transform.position.y)+1,
+
+                    selectedObject.transform.position.z);
+
+                controlPanel.SetActive(true);
+            }
+            else if (selectedObject)
+            {
+                selectedObject.GetComponent<MeshRenderer>().material = unselectedMaterial;
+                selectedObject.transform.position = new Vector3(
+
+                    selectedObject.transform.position.x,
+                    (selectedObject.transform.position.y)-1,
+
+                    selectedObject.transform.position.z);
+                       
+                
+                controlPanel.SetActive(false);
+
+                selectedObject = null;
+            }
+        }
     }
 }
 
