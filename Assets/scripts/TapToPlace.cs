@@ -6,13 +6,14 @@ using UnityEngine.Experimental.XR;
 using System;
 public class TapToPlace : MonoBehaviour
 {
-    public GameObject objectToPlace;
+    
     public GameObject placementIndicator;
 
     [SerializeField]private ARRaycastManager arOrigin;
     private Pose placementPose;
     private bool placementPoseIsValid = false;
     private int count = 0;
+    [SerializeField] private GameObject ColourcontrolPanel;
     
 
     void Start()
@@ -27,13 +28,10 @@ public class TapToPlace : MonoBehaviour
 
         if (placementPoseIsValid && Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && count==0)
         {
-            PlaceObject();
+            Controller.instance.PlaceObject(placementPose);
+            count = 1;
+            ColourcontrolPanel.SetActive(true);
         }
-    }
-    private void PlaceObject()
-    {
-        Instantiate(objectToPlace, placementPose.position, placementPose.rotation);
-        count = 1;
     }
     
 

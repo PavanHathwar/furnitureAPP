@@ -1,21 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjMovement : MonoBehaviour
 {
     
     private Touch touch;
-    [SerializeField] private Material select;
+   
     [SerializeField] private GameObject controlPanel;
+    [SerializeField] private GameObject ColourControlPanel;
     [SerializeField] private LayerMask interactableLayers;
 
     private float speedModifier;
     private float initialDistance;
     private Vector3 initialScale;
-    private GameObject selectedObject;
-    private Material unselectedMaterial;
+    private GameObject selectedObject=null;
     private Button leftButton;
     private Button rightButton;
     
@@ -62,7 +60,7 @@ public class ObjMovement : MonoBehaviour
             {
                 GameObject newSelectedObject = hit.transform.gameObject;
 
-                move(touch,newSelectedObject);
+                Move(touch,newSelectedObject);
             }
         }
 
@@ -75,12 +73,12 @@ public class ObjMovement : MonoBehaviour
             {
                 GameObject newSelectedObject = hit.transform.gameObject;
 
-                selecting(touch, newSelectedObject);
+                Selecting(touch, newSelectedObject);
             }
         }
     }
 
-    void move(Touch touch,GameObject newselectedObject)
+    void Move(Touch touch,GameObject newselectedObject)
     { //Material material = newselectedObject.GetComponent<MeshRenderer>().material;
         if (touch.phase == TouchPhase.Moved && selectedObject != null)
         {
@@ -90,18 +88,17 @@ public class ObjMovement : MonoBehaviour
                 newselectedObject.transform.position.y,
 
                 newselectedObject.transform.position.z + touch.deltaPosition.y * speedModifier);
+            
         }
     }
 
-    void selecting(Touch touch, GameObject newSelectedObject)
+    void Selecting(Touch touch, GameObject newSelectedObject)
     {
         if (touch.phase == TouchPhase.Began)
         {
             if (selectedObject == null)
             {
                 selectedObject = newSelectedObject;
-                unselectedMaterial = selectedObject.GetComponent<MeshRenderer>().material;
-                selectedObject.GetComponent<MeshRenderer>().material = select;
                 selectedObject.transform.position = new Vector3(
 
                     selectedObject.transform.position.x,
@@ -110,10 +107,20 @@ public class ObjMovement : MonoBehaviour
                     selectedObject.transform.position.z);
 
                 controlPanel.SetActive(true);
+                ColourControlPanel.SetActive(false);
+                selectedObject.transform.Find("selectCube").gameObject.SetActive(true);
+                selectedObject.transform.Find("shadow").gameObject.SetActive(true);
+                GameObject shadow = selectedObject.transform.Find("shadow").gameObject;
+                shadow.transform.position=new Vector3(
+
+                    selectedObject.transform.position.x,
+                    (selectedObject.transform.position.y)-(1),
+
+                    selectedObject.transform.position.z);
+
             }
             else if (selectedObject)
             {
-                selectedObject.GetComponent<MeshRenderer>().material = unselectedMaterial;
                 selectedObject.transform.position = new Vector3(
 
                     selectedObject.transform.position.x,
@@ -123,7 +130,9 @@ public class ObjMovement : MonoBehaviour
                        
                 
                 controlPanel.SetActive(false);
-
+                ColourControlPanel.SetActive(true);
+                selectedObject.transform.Find("selectCube").gameObject.SetActive(false);
+                selectedObject.transform.Find("shadow").gameObject.SetActive(false);
                 selectedObject = null;
             }
         }

@@ -2,9 +2,8 @@
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <_TargetFrameworkDirectories>non_empty_path_generated_by_unity.rider.package</_TargetFrameworkDirectories>
-    <_FullFrameworkReferenceAssemblyPaths>non_empty_path_generated_by_unity.rider.package</_FullFrameworkReferenceAssemblyPaths>
-    <DisableHandlePackageFileConflicts>true</DisableHandlePackageFileConflicts>
+    <CscToolPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/Tools/RoslynScripts</CscToolPath>
+    <CscToolExe>unity_csc.sh</CscToolExe>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -30,7 +29,6 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -40,7 +38,6 @@
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
     <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
-    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
     <NoConfig>true</NoConfig>
@@ -65,79 +62,12 @@
      <Compile Include="Assets\Pixel Play\Scripts\OffScreenIndicator\OffScreenIndicator.cs" />
      <Compile Include="Assets\Pixel Play\Scripts\OffScreenIndicator\OffScreenIndicatorCore.cs" />
      <Compile Include="Assets\Pixel Play\Scripts\OffScreenIndicator\Target.cs" />
+     <Compile Include="Assets\scripts\ColourCustomizer.cs" />
+     <Compile Include="Assets\scripts\Controller.cs" />
      <Compile Include="Assets\scripts\ObjMovement.cs" />
      <Compile Include="Assets\scripts\TapToPlace.cs" />
- <Reference Include="Unity.XR.Management">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Subsystem.Registration">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
- </Reference>
- <Reference Include="Unity.VSCode.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.ARSubsystems">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.ARSubsystems.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.ARCore">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.ARFoundation.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.ARFoundation">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.UI">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.ARCore.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Timeline">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
- </Reference>
- <Reference Include="Unity.CollabProxy.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.XR.LegacyInputHelpers">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
- </Reference>
- <Reference Include="Unity.XR.Management.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
- </Reference>
- <Reference Include="Unity.Rider.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.SpatialTracking">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
- </Reference>
- <Reference Include="Unity.TextMeshPro">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.XR.LegacyInputHelpers">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.UI">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
- </Reference>
- <Reference Include="Unity.DeviceSimulator.Tests.Common">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.DeviceSimulator.Tests.Common.dll</HintPath>
- </Reference>
- <Reference Include="Unity.DeviceSimulator.Editor">
- <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
+ <Reference Include="UnityEngine">
+ <HintPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
  <HintPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -309,6 +239,9 @@
  </Reference>
  <Reference Include="UnityEngine.XRModule">
  <HintPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor">
+ <HintPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
  </Reference>
  <Reference Include="netstandard">
  <HintPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/NetStandard/ref/2.0.0/netstandard.dll</HintPath>
@@ -655,6 +588,80 @@
  <Reference Include="mscorlib">
  <HintPath>/Users/pavanhathwar/unity_projects/2019.4.24f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
  </Reference>
+ <Reference Include="Unity.XR.Management">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.Management.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Subsystem.Registration">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Subsystem.Registration.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.VSCode.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.ARSubsystems">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARSubsystems.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.ARSubsystems.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARSubsystems.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.ARCore">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARCore.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.ARFoundation.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARFoundation.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.ARFoundation">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARFoundation.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.DeviceSimulator.Tests.Common">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.DeviceSimulator.Tests.Common.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.UI">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.ARCore.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.ARCore.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Timeline">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.CollabProxy.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.XR.Management.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.XR.Management.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.Rider.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.DeviceSimulator.Editor">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.DeviceSimulator.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.SpatialTracking">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.SpatialTracking">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="Unity.TextMeshPro">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.UI">
+ <HintPath>/Users/pavanhathwar/Desktop/Virtual_Furniture/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

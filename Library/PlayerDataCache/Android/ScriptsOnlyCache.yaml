@@ -1,12 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - ColourCustomizer
+    - Controller
     - ObjMovement
     - TapToPlace
     Unity.DeviceSimulator.Editor.dll:
     - Unity.DeviceSimulator.SimulatorWindow
     Unity.Rider.Editor.dll:
-    - Packages.Rider.Editor.RiderScriptEditorData
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.XR.ARFoundation.dll:
     - UnityEngine.XR.ARFoundation.ARCameraBackground
@@ -68,35 +69,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11294}
     - Class: 114
-      Script: {instanceID: 11470}
+      Script: {instanceID: 11476}
     - Class: 114
-      Script: {instanceID: 11554}
+      Script: {instanceID: 11560}
     - Class: 114
-      Script: {instanceID: 11708}
+      Script: {instanceID: 11716}
     - Class: 114
-      Script: {instanceID: 11912}
+      Script: {instanceID: 11870}
     - Class: 114
-      Script: {instanceID: 12002}
+      Script: {instanceID: 11928}
     - Class: 114
-      Script: {instanceID: 12528}
+      Script: {instanceID: 12024}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12576}
     - Class: 114
-      Script: {instanceID: 12806}
+      Script: {instanceID: 12848}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12858}
     - Class: 114
-      Script: {instanceID: 13128}
+      Script: {instanceID: 13062}
     - Class: 114
-      Script: {instanceID: 13152}
+      Script: {instanceID: 13194}
     - Class: 114
-      Script: {instanceID: 13178}
+      Script: {instanceID: 13222}
     - Class: 114
-      Script: {instanceID: 13328}
+      Script: {instanceID: 13250}
     - Class: 114
-      Script: {instanceID: 13466}
+      Script: {instanceID: 13408}
     - Class: 114
-      Script: {instanceID: 13576}
+      Script: {instanceID: 13550}
+    - Class: 114
+      Script: {instanceID: 13598}
+    - Class: 114
+      Script: {instanceID: 13668}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -130,7 +135,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: 24b2332682802a38f51bf82256eb4753
+      Hash: 74d955e1737ee029036f5332bfd52c4d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TapToPlace
@@ -314,6 +319,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationPlayableAsset
+  - hash:
+      serializedVersion: 2
+      Hash: cb834ac43615044c4b7a351a6bee7e16
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Controller
   - hash:
       serializedVersion: 2
       Hash: aba7b2852ef61d175dd9602e7723d5e5
@@ -622,7 +633,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 33fd9b7ccdb5c0aa83c112cb03b9db02
+      Hash: 07a4db726a36800b42f59d19e6e81ff7
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ObjMovement
@@ -710,6 +721,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.XR.ARSubsystems.dll
     namespaceName: UnityEngine.XR.ARSubsystems
     className: XRReferenceImageLibrary
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ColourCustomizer
   - hash:
       serializedVersion: 2
       Hash: a63fc1a3b035e5a0b5839cd7f7b3086e

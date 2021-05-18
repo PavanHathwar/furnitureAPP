@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: selectmaterial
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION _METALLICGLOSSMAP _NORMALMAP
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _EMISSION
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -25,7 +25,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 10910, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Cube:
@@ -57,7 +57,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -77,9 +77,9 @@ Material:
     - _DstBlend: 10
     - _EnableExternalAlpha: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.673
+    - _Glossiness: 0.867
     - _GlossyReflections: 1
-    - _Metallic: 0.425
+    - _Metallic: 0.366
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
@@ -91,7 +91,7 @@ Material:
     - _WindQuality: 0
     - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.24007654, g: 0.40030345, b: 0.6132076, a: 0.16862746}
+    - _Color: {r: 0.4219918, g: 0.59519184, b: 0.8207547, a: 0}
     - _Emission: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColor: {r: 0.029693183, g: 0.024791006, b: 0.025182238, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
